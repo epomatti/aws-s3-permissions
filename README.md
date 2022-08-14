@@ -119,5 +119,6 @@ aws s3api put-bucket-policy --bucket $bucket --policy file://bucket-policy.json
 ## Clean-up
 
 ```sh
+aws s3api delete-object --bucket $bucket --key $file
 aws s3api delete-bucket --bucket $bucket
 ```
