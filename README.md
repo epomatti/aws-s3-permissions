@@ -1,4 +1,4 @@
-# aws-s3-permissions
+# AWS S3 Permissions & ACL
 
 This exercise will demonstrate different behaviors for S3 permissions and ACLs.
 
@@ -86,6 +86,35 @@ aws s3api put-public-access-block \
   --public-access-block-configuration "BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true"
 ```
 
+Before moving on let's remove the object public ACL:
+
+```sh
+aws s3api put-object-acl --bucket $bucket --key $file --acl private
+```
+
+## Bucket Policies
+
+Adding a bucket policy at this stage will fail:
+
+```sh
+$ aws s3api put-bucket-policy --bucket $bucket --policy file://bucket-policy.json
+
+An error occurred (AccessDenied) when calling the PutBucketPolicy operation: Access Denied
+```
+
+To allow it, set `BlockPublicPolicy=false`:
+
+```sh
+aws s3api put-public-access-block \
+  --bucket $bucket \
+  --public-access-block-configuration "BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=false,RestrictPublicBuckets=true"
+```
+
+Now creating a new bucket policy should work:
+
+```sh
+aws s3api put-bucket-policy --bucket $bucket --policy file://bucket-policy.json
+```
 
 ## Clean-up
 
