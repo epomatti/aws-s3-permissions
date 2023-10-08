@@ -42,7 +42,7 @@ Make sure to check the bucket ACL at the start:
 aws s3api get-bucket-acl --bucket $bucket
 ```
 
-## ACL Exercise
+## ACL exercise
 
 Trying to PUT a public ACL to an object will fail because ACLs are disabled.
 
