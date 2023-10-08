@@ -10,7 +10,7 @@ When `BucketOwnerEnforced` is set (which is the default), ACLs are disabled and 
 
 ## Setup
 
-Create the baseline bucket. This bucket will have no public access.
+Create the sample bucket:
 
 ```sh
 # Setup the common variables
