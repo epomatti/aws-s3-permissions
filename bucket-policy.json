@@ -4,7 +4,7 @@
          "Effect": "Allow",
          "Principal": "*",
          "Action": "s3:GetObject",
-         "Resource": "arn:aws:s3:::permissions-sandbox-sa-east-1-epomatti/*"
+         "Resource": "arn:aws:s3:::bucket-pomatti-permissions/*"
       }
    ]
 }
