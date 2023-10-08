@@ -6,7 +6,7 @@ This exercise will demonstrate different behaviors for S3 permissions, which inc
 - Bucket ACLs
 - IAM Policies
 
-When `BucketOwnerEnforced` is set (which is the default), ACLs are disabled. The bucket will own all objects and permissions must be set with policies.
+When `BucketOwnerEnforced` is set (which is the default), ACLs are disabled and permissions must be set with policies.
 
 ## Setup
 
